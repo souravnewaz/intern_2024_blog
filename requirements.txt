@@ -1,0 +1,16 @@
+Model and Migration:
+User:
+id, name, image, email, password
+
+Blog:
+id, user_id, title, description, image, status [active, inactive, deleted], views, likes_count, comments_count, created_at, updated_at
+
+Blog_Like:
+blog_id, user_id
+
+Blog_Comment:
+blog_id, user_id, body, created_at, updated_at
+
+Authentication
+Signup
+Login
