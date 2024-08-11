@@ -1,8 +1,11 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <div class="w-100 d-flex justify-content-between">
+            <div class="w-100 d-flex justify-content-between align-items-center">
                 <a class="navbar-brand" href="/">{{ env('APP_NAME') }}</a>
+                <div>
+                    <a href="{{ route('blogs.index') }}" class="text-white">Blogs</a>
+                </div>
                 <div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

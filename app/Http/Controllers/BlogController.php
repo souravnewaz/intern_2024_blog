@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
+    public function index()
+    {
+        $blogs = Blog::with('user')->get();
+
+        return view('blogs.index', compact('blogs'));
+    }
+
+    public function show(Blog $blog)
+    {
+        return view('blogs.show', compact('blog'));
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [

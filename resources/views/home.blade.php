@@ -3,23 +3,17 @@
 
 <div class="row d-flex justify-content-center">
     <div class="col-12 col-md-8">
-        <div class="card mt-3">
-            <div class="card-header">
-                <h5 class="card-title mb-0">Write Blog</h5>
-            </div>
+        <div class="card mt-2">
             <div class="card-body">
                 <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label>Title</label>
-                        <input type="text" class="form-control" name="title" required>
+                        <input type="text" class="form-control" name="title" placeholder="Title" required>
                     </div>
                     <div class="mb-3">
-                        <label>Description</label>
-                        <textarea name="description" class="form-control"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Description"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label>Image</label>
                         <input type="file" class="form-control" name="image">
                     </div>
                     @include('components.alerts')
@@ -27,6 +21,10 @@
                 </form>
             </div>
         </div>
+
+        @foreach ($blogs as $blog)
+        @include('components.blog-list', ['blog' => $blog])
+        @endforeach
     </div>
 </div>
 
