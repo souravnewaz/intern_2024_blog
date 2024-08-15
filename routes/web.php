@@ -19,5 +19,8 @@ Route::post('signup', [AuthController::class, 'signup'])->name('signup');
 
 
 Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::post('blogs/{blog}/update', [BlogController::class, 'update'])->name('blogs.update');
 Route::get('blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 Route::post('blogs/store', [BlogController::class, 'store'])->name('blogs.store');
+Route::post('blogs/{blog}/delete', [BlogController::class, 'delete'])->name('blogs.delete');

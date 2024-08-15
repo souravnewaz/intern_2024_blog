@@ -1,10 +1,10 @@
 <?php
 
-    if ($blog->image == null) {
-        $image = 'images/default.png';
-    } else {
-        $image = $blog->image;
-    }
+if ($blog->image == null) {
+    $image = 'images/default.png';
+} else {
+    $image = $blog->image;
+}
 ?>
 
 <div class="card mt-2">
@@ -20,5 +20,14 @@
     </div>
     <div class="card-body">
         <p class="mb-0">{{ $blog->description }}</p>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex">
+            <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info btn-sm">Edit</a>
+            <form action="{{ route('blogs.delete', $blog->id) }} " method="POST">
+                @CSRF
+                <button class="btn btn-danger btn-sm ms-1" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
+        </div>
     </div>
 </div>
