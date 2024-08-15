@@ -22,9 +22,13 @@
             </div>
         </div>
 
-        @foreach ($blogs as $blog)
-        @include('components.blog-list', ['blog' => $blog])
-        @endforeach
+        <div class="row">
+            @foreach ($blogs as $blog)
+            <div class="col-md-6 mb-3">
+                @include('components.blog-list', ['blog' => $blog])
+            </div>
+            @endforeach
+        </div>
     </div>
 </div>
 

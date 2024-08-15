@@ -1,4 +1,14 @@
+<?php
+
+    if ($blog->image == null) {
+        $image = 'images/default.png';
+    } else {
+        $image = $blog->image;
+    }
+?>
+
 <div class="card mt-2">
+    <img src="{{ asset($image) }}" alt="">
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <h6 class="mb-0">

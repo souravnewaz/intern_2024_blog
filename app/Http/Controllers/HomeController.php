@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $blogs = Blog::with('user')->get();
+        $blogs = Blog::with('user')->orderBy('id', 'DESC')->get();
 
         return view('home', compact('blogs'));
     }
