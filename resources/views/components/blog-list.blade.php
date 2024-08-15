@@ -21,6 +21,7 @@ if ($blog->image == null) {
     <div class="card-body">
         <p class="mb-0">{{ $blog->description }}</p>
     </div>
+    @if(auth()->check() && auth()->id() == $blog->user_id)
     <div class="card-footer">
         <div class="d-flex">
             <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info btn-sm">Edit</a>
@@ -30,4 +31,5 @@ if ($blog->image == null) {
             </form>
         </div>
     </div>
+    @endif
 </div>

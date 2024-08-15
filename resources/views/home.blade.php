@@ -2,7 +2,9 @@
 @section('content')
 
 <div class="row d-flex justify-content-center">
+
     <div class="col-12 col-md-8">
+        @auth
         <div class="card mt-2">
             <div class="card-body">
                 <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
@@ -20,6 +22,7 @@
                     <button class="btn btn-primary" type="submit">Post</button>
                 </form>
             </div>
+            @endauth
         </div>
 
         <div class="row">

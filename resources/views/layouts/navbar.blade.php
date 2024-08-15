@@ -16,6 +16,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="">{{ auth()->user()->name }}</a>
                             </li>
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="nav-link" onclick="return confirm('Are you sure?')">Logout</button>
+                                </form>
+                            </li>
                             @endauth
 
                             @guest
